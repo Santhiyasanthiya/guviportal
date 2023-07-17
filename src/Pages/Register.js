@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Alert } from "@mui/material";
+import { API } from "../Global";
 
 export function Register() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export function Register() {
 
     validationSchema: validationRegisterSchema,
     onSubmit: async (values) => {
-       const register = await fetch ("http://localhost:4000/users/register",{
+       const register = await fetch (`${API}/users/register`,{
           method:"POST",
           body:JSON.stringify(values),
           headers:{"Content-type":"application/json"}

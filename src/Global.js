@@ -1,0 +1,1 @@
+ export const API="https://guviportalbackend.vercel.app"

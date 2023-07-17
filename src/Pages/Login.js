@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link, useNavigate} from "react-router-dom";
+import { API } from '../Global';
 
 export default function Login() {
   const navigate = useNavigate()
@@ -22,7 +23,7 @@ export default function Login() {
 
     validationSchema: validationRegisterSchema,
     onSubmit: async (values) => {
-      const data = await fetch("http://localhost:4000/users/login", {
+      const data = await fetch(`${API}/users/login`, {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-type": "application/json" },
