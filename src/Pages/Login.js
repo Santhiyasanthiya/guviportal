@@ -27,14 +27,15 @@ export default function Login() {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-type": "application/json" },
-      });
+      })
+      .then((data)=> data.json)
       if (data.status === 401) {
         console.log(" ❌ Error ");
        alert(data.message)
 
       } else {
-        const result = await data.json();
-        console.log(" ✅ Success", result);
+        
+        console.log(" ✅ Success");
         localStorage.setItem("token", result.token);
         alert(data.message)
         navigate("/home");

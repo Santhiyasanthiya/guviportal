@@ -31,14 +31,13 @@ export function Register() {
           body:JSON.stringify(values),
           headers:{"Content-type":"application/json"}
         })    
-
+        .then((data)=> data.json())
       if (register.status === 400) {
         alert(register.message);
       
       } else
        {
-        const result=await register.json() 
-        console.log(result)
+        
         alert("Successfully Registered")
         navigate("/");
        }
