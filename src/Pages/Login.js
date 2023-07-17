@@ -28,7 +28,7 @@ export default function Login() {
         body: JSON.stringify(values),
         headers: { "Content-type": "application/json" },
       })
-      .then((data)=> data.json)
+      .then((data)=> data.json())
       if (data.status === 401) {
         console.log(" ❌ Error ");
        alert(data.message)
