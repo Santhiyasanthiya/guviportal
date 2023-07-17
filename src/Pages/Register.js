@@ -38,6 +38,7 @@ export function Register() {
       } else
        {
         const result=await register.json() 
+        console.log(result)
         alert("Successfully Registered")
         navigate("/");
        }
