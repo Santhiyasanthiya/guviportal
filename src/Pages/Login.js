@@ -31,11 +31,12 @@ export default function Login() {
       if (data.status === 401) {
         console.log(" ❌ Error ");
        alert(data.message)
+
       } else {
         const result = await data.json();
         console.log(" ✅ Success", result);
         localStorage.setItem("token", result.token);
-       
+        alert(data.message)
         navigate("/home");
       }
     },
